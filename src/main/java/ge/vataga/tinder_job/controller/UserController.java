@@ -30,7 +30,7 @@ public class UserController {
         // Вызываем сервис для добавления пользователя
         userService.createUser(user.getUsername(), user.getPassword(), user.getName(), user.getRole(), user.getSkills());
 
-        // Перенаправляем пользователя на страницу успешного добавления
+        // Перенаправляем пользователя на страницу успешного добавления`
         return ResponseEntity.ok("success");
     }
 }

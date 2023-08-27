@@ -18,7 +18,7 @@ public class UserService {
     }
 
     @Transactional
-    public User createUser(String username, String password, String name, String role, String skills) {
+    public User createUser(String username, String password, String name, String role, List<String> skills) {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
@@ -37,7 +37,7 @@ public class UserService {
     }
 
     @Transactional
-    public User updateUser(Integer userId, String name, String role, String skills) {
+    public User updateUser(Integer userId, String name, String role, List<String> skills) {
         User user = userRepository.findById(userId).orElse(null);
         if (user != null) {
             user.setName(name);
